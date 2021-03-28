@@ -1,0 +1,18 @@
+{
+  "name": "hana_app",
+  "version": "1.0.0",
+  "description": "hana in nodejs + express",
+  "main": "server.js",
+  "dependencies": {
+    "-": "^0.0.1",
+    "body-parser": "^1.19.0",
+    "express": "^4.16.2",
+    "hdb": "^0.15.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "author": "Stone Wang",
+  "license": "MIT"
+}
