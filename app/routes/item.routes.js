@@ -3,11 +3,11 @@ module.exports = function (app) {
     var inv = require("../controllers/inv.controller")
 
     // list all
-    app.get('/entrada', inv.entrada);
-    app.get('/salida', inv.salida);
+    app.post('/entrada', inv.entrada);
+    app.post('/salida', inv.salida);
 
     // query by ID
-    app.get('/item/:itemcode/:location', itemController.queryById);
+    app.post('/item/:itemcode/:location', itemController.queryById);
 
 
 
