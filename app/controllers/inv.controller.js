@@ -10,10 +10,10 @@ exports.salida = (req, res) => {
         DocDate: '31/03/2021',
         BPL_IDAssignedToInvoice: 1
     }
-    // const sql = `SELECT \"ItemCode\", \"ItemName\", \"OnHandQty\", \"BinAbs\", \"BinCode\", \"WhsCode\", \"BPLId\", \"AbsEntry\", \"DistNumber\" 
-    //         FROM \"_SYS_BIC\".\"PortalGROB.Consultas.Inv_View.Transferencia/TEMP_INV_TRANSF_EXIST_LOTEVTA\" WHERE \"ItemCode\" = ? And \"BinCode\" = ?`;
     const sql = `SELECT \"ItemCode\", \"ItemName\", \"OnHandQty\", \"BinAbs\", \"BinCode\", \"WhsCode\", \"BPLId\", \"AbsEntry\", \"DistNumber\" 
-            FROM \"_SYS_BIC\".\"ProductivaGOVI/INV_LOTE_EXIT_PORTAL_AJUSTES_INV\" WHERE \"ItemCode\" = ? And \"BinCode\" = ?`;
+             FROM \"_SYS_BIC\".\"PortalGROB.Consultas.Inv_View.Transferencia/TEMP_INV_TRANSF_EXIST_LOTEVTA\" WHERE \"ItemCode\" = ? And \"BinCode\" = ?`;
+    //const sql = `SELECT \"ItemCode\", \"ItemName\", \"OnHandQty\", \"BinAbs\", \"BinCode\", \"WhsCode\", \"BPLId\", \"AbsEntry\", \"DistNumber\" 
+    //        FROM \"_SYS_BIC\".\"ProductivaGOVI/INV_LOTE_EXIT_PORTAL_AJUSTES_INV\" WHERE \"ItemCode\" = ? And \"BinCode\" = ?`;
     let DocumentLines = []
     body.items.map(function (element, index, array) {
         const statement = client.prepare(sql)
@@ -84,7 +84,7 @@ exports.entrada = (req, res) => {
         DocDate: '31/03/2021',
         BPL_IDAssignedToInvoice: 1
     }
-    const sql = `SELECT TOP 1 \"AbsEntry\" FROM \"SBODEMOGOVI2020\".\"OBIN\" WHERE \"BinCode\" = ?`;
+    const sql = `SELECT TOP 1 \"AbsEntry\" FROM \"SBOGOVI\".\"OBIN\" WHERE \"BinCode\" = ?`;
     let DocumentLines = []
     body.items.map(function (element, index, array) {
         const statement = client.prepare(sql)
